@@ -11,9 +11,9 @@ const Reel = function(canvas, offsetX = 0) {
     this.clickTime = 0;
     this.showedLastAnim = false;
     this.clicked = false;
-    this.mode = 'fixed';
-    this.fixedPlace = 'middle';
-    this.fixedImg = 'Cherry';
+    this.mode = 'random';
+    this.fixedPlace = 'top';
+    this.fixedImg = 'BAR';
     this.finalShapes = [];
     //clear whole reel
     const clear = function() {

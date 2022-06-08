@@ -105,7 +105,7 @@ const Slot = function(canvas) {
     };
 
     this.start = function() {
-        if (trytry > 3) {
+        if (this.trytry > 3) {
             conf.sound.win.volume = 1.0;
         } else {
             conf.sound.first.volume = 1.0;
