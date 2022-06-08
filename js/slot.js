@@ -7,12 +7,8 @@ const Slot = function(canvas) {
     let currentSpin = [];
 
     this.checkout = function() {
-        if (confirm('Are you sure? We can keep your money better!')) {
-            conf.player.money = 0;
-            conf.balance.value = conf.player.money;
-            conf.win.classList.remove('blink');
-            auto = false;
-            alert('Your operation has been made successfully');
+        if (confirm('Are you sure?')) {
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
     };
 
