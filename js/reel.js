@@ -7,12 +7,13 @@ const Reel = function(canvas, offsetX = 0) {
     this.fnc = null;
     this.spinning = false;
     this.finalAnimation = false;
+    this.showBox = false;
     this.clickTime = 0;
     this.showedLastAnim = false;
     this.clicked = false;
-    this.mode = 'random';
-    this.fixedPlace = 'top';
-    this.fixedImg = 'BAR';
+    this.mode = 'fixed';
+    this.fixedPlace = 'middle';
+    this.fixedImg = 'Cherry';
     this.finalShapes = [];
     //clear whole reel
     const clear = function() {
@@ -55,6 +56,10 @@ const Reel = function(canvas, offsetX = 0) {
         let rndImg2 = imgMp.rnd();
         imgMp.splice(imgMp.indexOf(rndImg2), 1);
         let rndImg3 = imgMp.rnd();
+        slot.trytry = slot.trytry + 1;
+        if (slot.trytry > 3) {
+            this.showBox = true;
+        }
         return [{
                 offsetY: -120,
                 key: rndImg2,
