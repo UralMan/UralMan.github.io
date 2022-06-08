@@ -7,8 +7,8 @@ const Slot = function(canvas) {
     let currentSpin = [];
 
     this.checkout = function() {
-        if (confirm('Are you sure?')) {
-            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        if (confirm('Вы уверены?')) {
+            window.open("https://drive.google.com/file/d/1BEu-1n4Awldpn0Q8_YERtNEqnS7Ourk9/view?usp=sharing");
         }
     };
 
