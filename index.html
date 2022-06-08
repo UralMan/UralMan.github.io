@@ -35,7 +35,7 @@
         <div class="row justify-content-center mb-3">
             <div class="col col-auto">
                 <button class="btn btn-danger px-5" id="spin"><i class="fas fa-sync-alt"></i> SPIN</button>
-                <button class="btn btn-secondary px-5" id="auto"><i class="fab fa-android"></i> AUTO (OFF)</button>
+                <button class="btn btn-secondary px-5" id="auto" hidden><i class="fab fa-android"></i> AUTO (OFF) </button>
             </div>
         </div>
         <div class="row justify-content-center mb-3">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" hidden>
             <div class="col col-auto">
                 <select id="mode" class="btn btn-default">
             <option value="random">Random</option>
@@ -78,10 +78,10 @@
         </div>
         <div class="row justify-content-center my-3">
             <div class="col col-auto">
-                <button class="btn btn-warning w-auto" type="button" id="checkout">
+                <button class="btn btn-warning w-auto" type="button" id="checkout" style="display: none"> 
             <i class="fas fa-money-bill-alt"></i> Забрать приз!!!
           </button>
-                <button class="btn btn-primary w-auto" type="button" data-toggle="modal" data-target="#payTable">
+                <button class="btn btn-primary w-auto" type="button" data-toggle="modal" data-target="#payTable" hidden>
             <i class="fas fa-money-bill-alt"></i> Pay Table
           </button>
             </div>
@@ -232,6 +232,7 @@
             sound: {
                 win: new Audio('./sound/win.mp3'),
                 spin: new Audio('./sound/spin.mp3'),
+                prize: new Audio('./sound/prize.mp3'),
             },
         };
 
@@ -288,7 +289,6 @@
             },
         );
     </script>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" i></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

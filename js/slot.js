@@ -106,8 +106,9 @@ const Slot = function(canvas) {
     };
 
     this.start = function() {
-        conf.sound.first.volume = 1.0;
-        conf.sound.spin.volume = 0.03;
+        conf.sound.win.volume = 1.0;
+        conf.sound.prize.volume = 1.0;
+        conf.sound.spin.volume = 0.3;
         reels.forEach((reel) => {
             reel.clicked = true;
             reel.finalAnimation = false;
@@ -206,7 +207,13 @@ const Slot = function(canvas) {
         conf.player.money += totalSum;
         conf.balance.value = conf.player.money;
         if (totalSum !== 0) {
-            conf.sound.first.play();
+            if (conf.player.money > 4000) {
+                conf.sound.prize.play();
+                window.document.getElementById('checkout').style.display = 'block';
+            } else {
+                conf.sound.win.play();
+                //getElementById('checkout').style.visibility = 'hidden';
+            }
             conf.win.classList.add('blink');
             conf.win.value = totalSum;
             console.log(sum);
@@ -222,4 +229,5 @@ const Slot = function(canvas) {
 
         conf.spinBtn.click();
     };
+
 };
