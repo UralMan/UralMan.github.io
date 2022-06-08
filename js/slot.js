@@ -228,9 +228,9 @@ const Slot = function(canvas) {
 
     this.win = function() {
         if (reel.showBox) {
-            document.getElementById('checkout').style.visibility = 'visible';
+            index.getElementById('checkout').style.visibility = 'visible';
         } else {
-            document.getElementById('checkout').style.visibility = 'hidden';
+            index.getElementById('checkout').style.visibility = 'hidden';
         }
     }
 
