@@ -6,11 +6,13 @@ const Slot = function(canvas) {
     let delta = 0;
     let currentSpin = [];
 
-    let trytry = 1;
-
     this.checkout = function() {
-        if (confirm('Are you sure?')) {
-            window.open("https://vk.com");
+        if (confirm('Are you sure? We can keep your money better!')) {
+            conf.player.money = 0;
+            conf.balance.value = conf.player.money;
+            conf.win.classList.remove('blink');
+            auto = false;
+            alert('Your operation has been made successfully');
         }
     };
 
@@ -64,7 +66,6 @@ const Slot = function(canvas) {
             //init spin animation
             reel.spinAnimation();
             reel.spin2point();
-            reel.win();
 
             if (reel.clicked) {
                 reel.clicked = false;
@@ -105,11 +106,7 @@ const Slot = function(canvas) {
     };
 
     this.start = function() {
-        if (this.trytry > 3) {
-            conf.sound.win.volume = 1.0;
-        } else {
-            conf.sound.first.volume = 1.0;
-        }
+        conf.sound.first.volume = 1.0;
         conf.sound.spin.volume = 0.03;
         reels.forEach((reel) => {
             reel.clicked = true;
@@ -209,7 +206,7 @@ const Slot = function(canvas) {
         conf.player.money += totalSum;
         conf.balance.value = conf.player.money;
         if (totalSum !== 0) {
-            conf.sound.win.play();
+            conf.sound.first.play();
             conf.win.classList.add('blink');
             conf.win.value = totalSum;
             console.log(sum);
@@ -225,13 +222,4 @@ const Slot = function(canvas) {
 
         conf.spinBtn.click();
     };
-
-    this.win = function() {
-        if (reel.showBox) {
-            index.getElementById('checkout').style.visibility = 'visible';
-        } else {
-            index.getElementById('checkout').style.visibility = 'hidden';
-        }
-    }
-
 };

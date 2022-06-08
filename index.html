@@ -35,7 +35,7 @@
         <div class="row justify-content-center mb-3">
             <div class="col col-auto">
                 <button class="btn btn-danger px-5" id="spin"><i class="fas fa-sync-alt"></i> SPIN</button>
-                <button class="btn btn-secondary px-5" id="auto" hidden><i class="fab fa-android"></i> AUTO (OFF)</button>
+                <button class="btn btn-secondary px-5" id="auto"><i class="fab fa-android"></i> AUTO (OFF)</button>
             </div>
         </div>
         <div class="row justify-content-center mb-3">
@@ -62,26 +62,26 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center" hidden>
+        <div class="row justify-content-center">
             <div class="col col-auto">
                 <select id="mode" class="btn btn-default">
-            <option value="fixed">Fixed</option>
             <option value="random">Random</option>
+            <option value="fixed">Fixed</option>
           </select>
                 <select id="where" class="btn btn-default">
+            <option value="top">top</option>
             <option value="middle">middle</option>
             <option value="bottom">bottom</option>
-            <option value="top">top</option>
           </select>
                 <select id="what" class="btn btn-default"></select>
             </div>
         </div>
         <div class="row justify-content-center my-3">
             <div class="col col-auto">
-                <button class="btn btn-warning w-auto" type="button" id="checkout" hidden>
-            <i class="fas fa-money-bill-alt"></i> Забрать ПРИЗ!!!
+                <button class="btn btn-warning w-auto" type="button" id="checkout">
+            <i class="fas fa-money-bill-alt"></i> Забрать приз!!!
           </button>
-                <button class="btn btn-primary w-auto" type="button" data-toggle="modal" data-target="#payTable" hidden>
+                <button class="btn btn-primary w-auto" type="button" data-toggle="modal" data-target="#payTable">
             <i class="fas fa-money-bill-alt"></i> Pay Table
           </button>
             </div>
@@ -222,7 +222,7 @@
                 animTimes: [20, 25, 30].map((x) => x * 100),
             },
             pSkip: 40,
-            imgMap: ['Cherry', 'BAR', '2xBAR', '3xBAR', '7'],
+            imgMap: ['BAR', '2xBAR', '3xBAR', '7', 'Cherry'],
             imgStartPts: [...range(-2, 2)],
             player: {
                 money: 10,
@@ -232,13 +232,11 @@
             sound: {
                 win: new Audio('./sound/win.mp3'),
                 spin: new Audio('./sound/spin.mp3'),
-                second: new Audio('./sound/second.mp3'),
-                first: new Audio('./sound/first.mp3')
             },
         };
 
         //Resource loader
-        Resources('./img/Cherry.png', './img/BAR.png', './img/2xBAR.png', './img/3xBAR.png', './img/7.png').onLoad(
+        Resources('./img/BAR.png', './img/2xBAR.png', './img/3xBAR.png', './img/7.png', './img/Cherry.png').onLoad(
             function(resources, names) {
                 //loading done and ready to go
                 //save loaded resources to conf.img
