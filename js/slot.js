@@ -203,7 +203,7 @@ const Slot = function(canvas) {
         conf.player.money += totalSum;
         conf.balance.value = conf.player.money;
         if (totalSum !== 0) {
-            if (conf.player.money > 4000) {
+            if (conf.player.money > 1000000) {
                 conf.sound.prize.play();
                 window.document.getElementById('checkout').style.display = 'block';
             } else {
