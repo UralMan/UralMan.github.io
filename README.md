@@ -1,6 +1,6 @@
 # Javascript slot-game
 
-Original is forked from 'n1md7/slot-game'
+Original is forked from `n1md7/slot-game`
 
 ## Added several features
 
